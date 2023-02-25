@@ -1,0 +1,7 @@
+private static final Logger LOGGER = LoggerFactory.getLogger(GithubService.class);
+
+public List<Commit> getCommits() {
+    // method code
+    LOGGER.info("Retrieved {} commits from Github API", commits.length);
+    return Arrays.asList(commits);
+}
