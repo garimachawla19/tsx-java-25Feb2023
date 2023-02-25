@@ -1,0 +1,10 @@
+@RestController
+public class MyController {
+    @Autowired
+    private GithubService githubService;
+
+    @GetMapping("/commits")
+    public List<Commit> getCommits() {
+        return githubService.getCommits();
+    }
+}
