@@ -1,0 +1,9 @@
+//Define a method in the GithubService class that will retrieve the list of commits from the Github API.
+
+public List<Commit> getCommits() {
+    RestTemplate restTemplate = new RestTemplate();
+    String url = "https://api.github.com/repos/{owner}/{repo}/commits";
+    ResponseEntity<Commit[]> responseEntity = restTemplate.getForEntity(url, Commit[].class, "owner", "dummy-github-events");
+    Commit[] commits = responseEntity.getBody();
+    return Arrays.asList(commits);
+}
